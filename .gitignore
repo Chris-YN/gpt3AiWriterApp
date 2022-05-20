@@ -1,0 +1,13 @@
+##################
+### test files ###
+##################
+testHtml.html
+testJs.js
+testStyle.css
+
+
+
+##################
+## Misc ignores ##
+##################
+scratchPad.js
