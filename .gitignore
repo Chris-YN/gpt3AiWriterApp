@@ -11,3 +11,6 @@ testStyle.css
 ## Misc ignores ##
 ##################
 scratchPad.js
+# Local Netlify folder
+.netlify
+.env
