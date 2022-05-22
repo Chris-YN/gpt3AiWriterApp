@@ -37,10 +37,23 @@
       <div class="forms">
         <form action="">
 
-          <label for="" class="visuallyHidden">Ask what you want for AI to write</label>
-          <textarea class="userInput" name="" id="" rows="10" placeholder="what do you want AI to write about?"
-            required></textarea>
-          <button type="submit" class="submitButton">Go Go AI!!</button>
+          <div class="AiAvatarGen">
+            <p>Give AI a name to generate its avatar</p>
+            <label for="Give AI a name" class="visuallyHidden">Give AI a name to generate avatar</label>
+            <input type="text" placeholder="Give me a name" id="aiName">
+            
+            <button type="submit" class="nameSubmit">Generate Avatar</button>
+
+            <div class="avatarImageContainer">
+            </div>
+          </div>
+
+          <div class="promptTextArea">
+            <label for="" class="visuallyHidden">Ask what you want for AI to write</label>
+            <textarea class="userInput" name="" id="" rows="10" placeholder="what do you want AI to write about?">
+            </textarea>
+            <button type="submit" class="promptSubmit">Go Go AI!!</button>
+          </div>
 
         </form>
       </div>
