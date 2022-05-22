@@ -88,9 +88,9 @@ writerAiApp.feedTextPrompt = () => {
         for (i = 0; i < writerAiApp.outputArr.length; i++) {
           const liElement = document.createElement("li");
   
-          liElement.innerHTML = `<p>Your request: ${writerAiApp.outputArr
-          [i].prompt}<br>AI's answer: ${writerAiApp.outputArr
-          [i].result}</p>`
+          liElement.innerHTML = 
+          `<p><span>Your request:</span> ${writerAiApp.outputArr[i].prompt}</p>
+          <p class="aiP"><span>AI's answer:</span> ${writerAiApp.outputArr[i].result}</p>`
           resultUlTarget.append(liElement);
         }
         textAreaTarget.value = ""
