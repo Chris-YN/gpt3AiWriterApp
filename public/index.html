@@ -39,7 +39,7 @@
 
 
     <!-- =============================
-   ///// section userInputForm //////
+   /// section .aiNameAndAvatarGen ///
   ============================== -->
   <section class="aiNameAndAvatarGen">
     <div class="wrapper">
@@ -48,16 +48,17 @@
         <form action="">
 
           <div class="aiAvatarGen">
-            <p>Give AI a name to generate its avatar</p>
+            <p>Let's begin by giving your AI a name</p>
 
             <div class="nameInputContainer">
               <label for="Give AI a name" class="visuallyHidden">Give AI a name to generate avatar</label>
-              <input type="text" placeholder="Give me a name" class="aiName">
+              <input type="text" placeholder="Please enter a name for AI" class="aiName">
               <button type="submit" class="nameSubmit">Generate Avatar</button>
             </div>
 
             <div class="avatarImageContainer">
-              <!-- response png from robohash will be inserted here  -->
+              <!-- response png from robohash will replace qmarkBot.png  -->
+              <img src="./styles/assets/qmarkBot.png" alt="placeholder background for your avatar">
             </div>
           </div>
 
@@ -78,8 +79,8 @@
       <div class="chatboxContainer">
 
         <div class="chatboxTopBar">
-          <h2>Talk to your AI writer</h2>
-          <i class="chatCloseButton fa-solid fa-circle-xmark"></i>
+          <h2>Talk to your AI writer bot</h2>
+          <i class="chatCloseButton fa-solid fa-square-xmark"></i>
         </div>
 
         <div class="resultDisplay">
@@ -87,7 +88,8 @@
             <div class="aiResponseContainer">
               <!-- initial message as short instruction for user -->
               <p class="aiP">
-                Hello! Very nice to meet you.<br><br>
+                Hello!<br>
+                Very nice to meet you.<br><br>
                 I can write you a short poem, make suggestions or even answer questions.<br><br>
                 Ask me anything.
               </p>
@@ -100,7 +102,7 @@
   
         <div class="promptTextAreaContainer">
           <label for="" class="visuallyHidden">Ask what you want for AI to write</label>
-          <textarea class="userInput" name="" id="" rows="10" placeholder="what do you want AI to write about?">
+          <textarea class="userInput" name="" id="" rows="10" placeholder="e.g. write me a poem about job search">
           </textarea>
           <button type="submit" class="promptSubmit">Send</button>
         </div>

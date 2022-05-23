@@ -1,0 +1,28 @@
+
+
+
+// _bp778.scss
+@media (max-width: 778px) {
+  ////////////////////////////
+  /////////  index  //////////
+  ////////////////////////////
+  .aiAvatarGen .nameInputContainer{
+    flex-direction: column;
+    input {
+        width: 100%;
+      }
+    
+      button {
+        width: 100%;
+      }
+  }
+
+  ////////////////////////////
+  ///////  chatModal  ////////
+  ////////////////////////////
+    .chatAndPromptHistory .aiResponseContainer,
+    .chatAndPromptHistory .userP{
+    width: 60%;
+  }
+  
+}

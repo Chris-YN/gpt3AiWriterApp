@@ -248,21 +248,31 @@ html {
   line-height: 1.15;
 }
 
-h1 {
+h1,
+h2 {
+  color: #303A39;
   font-family: "Quicksand", sans-serif;
   font-size: 2.7rem;
   font-weight: 300;
   text-align: center;
 }
 
+h2 {
+  font-size: 2rem;
+  color: #EC691B;
+}
+
+button,
+form {
+  font-size: 0.9rem;
+}
+
 p {
   font-family: "Barlow", sans-serif;
   font-size: 1rem;
   font-weight: 300;
-  color: black;
-}
-p span {
-  color: #303A39;
+  color: #303A39 span;
+  color-color: #303A39;
 }
 
 .aiP {
@@ -288,14 +298,36 @@ html {
   display: none;
 }
 
+input,
+textarea {
+  padding-left: 2%;
+}
+
+button {
+  background-color: #C0C841;
+  padding: 0 2%;
+  border: none;
+  color: #303A39;
+}
+button:hover {
+  cursor: pointer;
+  background-color: #FBBA28;
+  color: #EC691B;
+}
+
+.aiNameAndAvatarGen .wrapper {
+  padding-top: 8%;
+}
+
+.nameInputContainer {
+  padding-top: 3%;
+}
+
 .forms {
   width: 100%;
 }
 .forms p {
   text-align: center;
-}
-.forms .avatarImageContainer {
-  width: 20%;
 }
 
 .aiAvatarGen {
@@ -305,6 +337,37 @@ html {
 }
 .aiAvatarGen .nameInputContainer {
   width: 50%;
+  display: flex;
+}
+.aiAvatarGen .nameInputContainer input,
+.aiAvatarGen .nameInputContainer button {
+  height: 50px;
+}
+.aiAvatarGen .nameInputContainer input {
+  width: 70%;
+}
+.aiAvatarGen .nameInputContainer button {
+  width: 30%;
+  border: 1px solid #A6AC23;
+}
+
+.avatarImageContainer {
+  background-color: #ffffff;
+  width: 20%;
+  margin-top: 8%;
+  border-radius: 20px;
+}
+
+.chatStartButtonContainer {
+  height: 115px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 0;
+}
+.chatStartButtonContainer button {
+  height: 50px;
+  border: 1px solid #A6AC23;
 }
 
 .chatAndPromptHistory {
@@ -328,10 +391,16 @@ html {
   background-color: #F5F3DC;
   display: flex;
   justify-content: flex-end;
-  padding: 3% 3%;
+  padding: 2% 5% 2% 5%;
+}
+.chatAndPromptHistory .chatboxTopBar h2 {
+  width: 100%;
+  text-align: left;
 }
 .chatAndPromptHistory .chatboxTopBar i {
   font-size: 2rem;
+  margin-top: 1%;
+  text-align: right;
 }
 .chatAndPromptHistory .resultDisplay,
 .chatAndPromptHistory .resultUl {
@@ -353,6 +422,7 @@ html {
 .chatAndPromptHistory .aiResponseContainer {
   background-color: #ffffff;
   width: 45%;
+  margin-top: 5%;
   border-radius: 15px;
   display: flex;
   padding: 3% 3%;
@@ -385,23 +455,43 @@ html {
 .promptTextAreaContainer {
   background-color: #F5F3DC;
   width: 100%;
-  height: 90px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow-y: auto;
 }
 .promptTextAreaContainer textarea {
-  width: 75%;
-  height: 70px;
+  width: 64%;
+  height: 60px;
   border: none;
   resize: none;
 }
 .promptTextAreaContainer .promptSubmit {
   background-color: #C0C841;
-  width: 11%;
-  height: 74px;
+  width: 15%;
+  height: 60px;
   border: 0;
+}
+.promptTextAreaContainer .promptSubmit:hover {
+  cursor: pointer;
+  color: #303A39;
+  background-color: #A6AC23;
+}
+
+header {
+  position: relative;
+}
+header::after {
+  width: 68%;
+  position: absolute;
+  bottom: -3%;
+  left: 16%;
+  border-bottom: 1px solid #EC691B;
+  content: "";
+}
+header .wrapper {
+  padding-top: 8%;
 }
 
 footer .wrapper {
@@ -410,6 +500,7 @@ footer .wrapper {
   position: relative;
 }
 footer .wrapper p {
+  text-align: center;
   color: #F5F3DC;
 }
 footer .wrapper::before {
@@ -418,4 +509,67 @@ footer .wrapper::before {
   border-top: 1px solid #EC691B;
   top: 0;
   content: "";
+}
+
+@media (max-width: 778px) {
+  .aiAvatarGen .nameInputContainer {
+    flex-direction: column;
+  }
+  .aiAvatarGen .nameInputContainer input {
+    width: 100%;
+  }
+  .aiAvatarGen .nameInputContainer button {
+    width: 100%;
+  }
+
+  .chatAndPromptHistory .aiResponseContainer,
+.chatAndPromptHistory .userP {
+    width: 60%;
+  }
+}
+@media (max-width: 576px) {
+  .wrapper {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    margin-right: 5%;
+  }
+
+  .aiP,
+.userP,
+input,
+textarea {
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+  }
+
+  .promptTextAreaContainer .promptSubmit {
+    width: 60px;
+  }
+}
+@media (max-width: 480px) {
+  .chatAndPromptHistory .aiResponseContainer,
+.chatAndPromptHistory .userP {
+    width: 75%;
+  }
+}
+@media (max-width: 480px) {
+  input::-moz-placeholder, textarea::-moz-placeholder {
+    font-size: 0.6rem;
+  }
+  input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    font-size: 0.6rem;
+  }
+  input::placeholder,
+textarea::placeholder {
+    font-size: 0.6rem;
+  }
 }/*# sourceMappingURL=style.css.map */

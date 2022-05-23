@@ -1,0 +1,36 @@
+
+
+
+// _bp576.scss
+@media (max-width: 576px) {
+  ////////////////////////////
+  ////////  general  /////////
+  ////////////////////////////
+  .wrapper{
+    width: 100%;
+  }
+  h1{
+    font-size: 2.2rem;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  h2{
+    font-size: 1.6rem;
+    margin-right: 5%;
+  }
+  .aiP,
+  .userP,
+  input,
+  textarea{
+    font-size: .8rem;
+    line-height: 1.5rem;
+  }
+
+
+  ////////////////////////////
+  ///////  chatModal  ////////
+  ////////////////////////////
+  .promptTextAreaContainer .promptSubmit{
+    width: 60px;
+  }
+}

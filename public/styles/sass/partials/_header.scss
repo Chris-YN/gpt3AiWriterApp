@@ -2,3 +2,17 @@
 
 
 // _header.scss
+header{
+  position: relative;
+  &::after{
+    width: 68%;
+    position: absolute;
+    bottom: -3%;
+    left: 16%;
+    border-bottom: 1px solid $redLight;
+    content: "";
+  }
+  .wrapper{
+    padding-top: 8%;
+  }
+}

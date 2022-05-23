@@ -3,13 +3,6 @@
 
 // script.js
 
-
-
-
-
-//  ===============================
-//   ////////// asdasd ///////////
-//  ===============================
 // namespace object
 writerAiApp = {};
 
@@ -38,7 +31,7 @@ writerAiApp.AvatarGeneration = () => {
     if (writerAiApp.aiNameGiven){
       document.querySelector(".avatarImageContainer").innerHTML = `<img src="https://robohash.org/${writerAiApp.aiNameGiven}.png" alt="Image of your AI avatar">`
   
-      chatStartTarget.innerHTML = `<button type="submit" class="chatStartSubmit">Start chtting with ${writerAiApp.aiNameGiven}</button>`
+      chatStartTarget.innerHTML = `<button type="submit" class="chatStartSubmit">Let's start a chat with ${writerAiApp.aiNameGiven}</button>`
       nameInputTarget.value = ""
     } else{
       chatStartTarget.innerHTML = "<p>Please give AI a name to proceed</p>"
@@ -48,6 +41,7 @@ writerAiApp.AvatarGeneration = () => {
 
 
 
+// method to show and hide chat modal that serves as main area of interaction
 writerAiApp.chatModal = () => {
   const chatStartSubmitTarget = document.querySelector(".chatStartButtonContainer");
   const chatCloseButtonTarget = document.querySelector(".chatCloseButton");

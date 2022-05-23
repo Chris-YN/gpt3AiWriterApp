@@ -1,0 +1,13 @@
+
+
+
+// _bp480.scss
+@media (max-width: 480px) {
+  ////////////////////////////
+  ///////  chatModal  ////////
+  ////////////////////////////
+  .chatAndPromptHistory .aiResponseContainer,
+  .chatAndPromptHistory .userP {
+    width: 75%;
+  }
+}
