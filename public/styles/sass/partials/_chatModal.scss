@@ -87,6 +87,13 @@
     border-radius: 15px;
     text-align: right;
   }
+
+  .aiP,
+  .userP{
+    span{
+      color: $yellowDark;
+    }
+  }
 }
 
 .chatCloseButton{

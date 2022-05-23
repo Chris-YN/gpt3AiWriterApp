@@ -446,6 +446,10 @@ button:hover {
   border-radius: 15px;
   text-align: right;
 }
+.chatAndPromptHistory .aiP span,
+.chatAndPromptHistory .userP span {
+  color: #FBBA28;
+}
 
 .chatCloseButton:hover {
   cursor: pointer;
