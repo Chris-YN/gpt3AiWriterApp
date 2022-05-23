@@ -2,6 +2,24 @@
 
 
 // _index.scss
-.avatarImageContainer{
-  width: 20%;
+.forms {
+  // to make sure .forms span 100% width of .wrapper
+  width: 100%;
+  p {
+    text-align: center;
+  }
+
+  .avatarImageContainer {
+    width: 20%;
+  }
+}
+
+.aiAvatarGen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .nameInputContainer{
+    width: 50%;
+  }
 }

@@ -1,0 +1,23 @@
+
+
+
+// _footer.scss
+footer{
+  .wrapper{
+    background-color: $greyDarkest;
+    padding: 1.5% 0;
+    position: relative;
+    p{
+      color: $bageBackground;
+    }
+
+
+    &::before{
+      width: 100%;
+      position: absolute;
+      border-top: 1px solid $redLight;
+      top: 0;
+      content: "";
+    }
+  }
+}

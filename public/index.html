@@ -17,10 +17,13 @@
     href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400&family=Chakra+Petch:wght@400;500&family=Quicksand:wght@400;500;600&display=swap"
     rel="stylesheet">
 
+  <!-- FontAwesome link -->
+  <script src="https://kit.fontawesome.com/12e0e6e5dc.js" crossorigin="anonymous"></script>
+
   <!-- css link -->
   <link rel="stylesheet" href="./styles/style.css">
 
-  <title>AI Hand Writing</title>
+  <title>Chat with AI writer bot</title>
 </head>
 
 <body>
@@ -29,7 +32,7 @@
   ============================== -->
   <header>
     <div class="wrapper">
-      <h1>AI Handwriting Generator</h1>
+      <h1>Chat with AI writer bot</h1>
     </div>
   </header>
 
@@ -38,30 +41,30 @@
     <!-- =============================
    ///// section userInputForm //////
   ============================== -->
-  <section class="userInputForm">
+  <section class="aiNameAndAvatarGen">
     <div class="wrapper">
 
       <div class="forms">
         <form action="">
 
-          <div class="AiAvatarGen">
+          <div class="aiAvatarGen">
             <p>Give AI a name to generate its avatar</p>
-            <label for="Give AI a name" class="visuallyHidden">Give AI a name to generate avatar</label>
-            <input type="text" placeholder="Give me a name" id="aiName">
-            
-            <button type="submit" class="nameSubmit">Generate Avatar</button>
+
+            <div class="nameInputContainer">
+              <label for="Give AI a name" class="visuallyHidden">Give AI a name to generate avatar</label>
+              <input type="text" placeholder="Give me a name" class="aiName">
+              <button type="submit" class="nameSubmit">Generate Avatar</button>
+            </div>
 
             <div class="avatarImageContainer">
+              <!-- response png from robohash will be inserted here  -->
             </div>
           </div>
 
-          <div class="promptTextArea">
-            <label for="" class="visuallyHidden">Ask what you want for AI to write</label>
-            <textarea class="userInput" name="" id="" rows="10" placeholder="what do you want AI to write about?">
-            </textarea>
-            <button type="submit" class="promptSubmit">Go Go AI!!</button>
+          <div class="chatStartButtonContainer">
+            <!-- start button will be inserted here -->
           </div>
-
+          
         </form>
       </div>
 
@@ -70,17 +73,44 @@
   <!-- section .userInputForm ends -->
   </section>
 
-  <section class="resultDisplay">
+  <section class="chatAndPromptHistory hideElement">
     <div class="wrapper">
-      <div class="resultDisplay">
-        <ul class="resultUl">
-      
-        </ul>
+      <div class="chatboxContainer">
+
+        <div class="chatboxTopBar">
+          <h2>Talk to your AI writer</h2>
+          <i class="chatCloseButton fa-solid fa-circle-xmark"></i>
+        </div>
+
+        <div class="resultDisplay">
+          <ul class="resultUl">
+            <div class="aiResponseContainer">
+              <!-- initial message as short instruction for user -->
+              <p class="aiP">
+                Hello! Very nice to meet you.<br><br>
+                I can write you a short poem, make suggestions or even answer questions.<br><br>
+                Ask me anything.
+              </p>
+            
+
+              <!-- response text string from openai will be inserted here -->
+
+          </ul>
+        </div>
+  
+        <div class="promptTextAreaContainer">
+          <label for="" class="visuallyHidden">Ask what you want for AI to write</label>
+          <textarea class="userInput" name="" id="" rows="10" placeholder="what do you want AI to write about?">
+          </textarea>
+          <button type="submit" class="promptSubmit">Send</button>
+        </div>
+
       </div>
-    
-    <!-- .wrapper for .resultDisplay ends -->
+
+      
+    <!-- .wrapper for .chatAndPromptHistory ends -->
     </div>
-  <!-- section .resultDisplay ends -->
+  <!-- section .chatAndPromptHistory ends -->
   </section>
 
 

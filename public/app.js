@@ -21,18 +21,46 @@ writerAiApp.keyaGrab = async () => {
 }
 
 
+
 // method to generate robot avatar with robohash api 
 // avatar generated is based on user's name input given to AI
+// Also make button to start chat with AI visible
 writerAiApp.AvatarGeneration = () => {
   const nameSubmitTarget = document.querySelector(".nameSubmit")
+  const nameInputTarget = document.querySelector(".aiName")
+  const chatStartTarget = document.querySelector(".chatStartButtonContainer")
 
   nameSubmitTarget.addEventListener("click", (event) => {
     event.preventDefault();
 
-    const nameInputTarget = document.querySelector("#aiName")
-
     writerAiApp.aiNameGiven = nameInputTarget.value;
-    document.querySelector(".avatarImageContainer").innerHTML = `<img src="https://robohash.org/${writerAiApp.aiNameGiven}.png" alt="Image of your AI avatar">`
+
+    if (writerAiApp.aiNameGiven){
+      document.querySelector(".avatarImageContainer").innerHTML = `<img src="https://robohash.org/${writerAiApp.aiNameGiven}.png" alt="Image of your AI avatar">`
+  
+      chatStartTarget.innerHTML = `<button type="submit" class="chatStartSubmit">Start chtting with ${writerAiApp.aiNameGiven}</button>`
+      nameInputTarget.value = ""
+    } else{
+      chatStartTarget.innerHTML = "<p>Please give AI a name to proceed</p>"
+    }
+  })
+}
+
+
+
+writerAiApp.chatModal = () => {
+  const chatStartSubmitTarget = document.querySelector(".chatStartButtonContainer");
+  const chatCloseButtonTarget = document.querySelector(".chatCloseButton");
+
+  chatStartSubmitTarget.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    document.querySelector(".chatAndPromptHistory").classList.toggle("hideElement");
+  })
+
+  chatCloseButtonTarget.addEventListener("click", ()=>{
+    document.querySelector(".chatAndPromptHistory").classList.toggle("hideElement");
+    window.location.reload();
   })
 }
 
@@ -89,8 +117,17 @@ writerAiApp.feedTextPrompt = () => {
           const liElement = document.createElement("li");
   
           liElement.innerHTML = 
-          `<p><span>Your request:</span> ${writerAiApp.outputArr[i].prompt}</p>
-          <p class="aiP"><span>AI's answer:</span> ${writerAiApp.outputArr[i].result}</p>`
+          `<p class="userP">
+            <span>Your request:</span> ${writerAiApp.outputArr[i].prompt}
+          </p>
+          <div class="aiResponseContainer">
+            <div class="chatboxAvatarPortraiContainer">
+              <img src="https://robohash.org/${writerAiApp.aiNameGiven}.png" alt="Image of your AI avatar">
+            </div>
+            <p class="aiP">
+              <span>${writerAiApp.aiNameGiven}'s answer:</span> ${writerAiApp.outputArr[i].result}
+            </p>
+          </div>`
           resultUlTarget.append(liElement);
         }
         textAreaTarget.value = ""
@@ -104,12 +141,13 @@ writerAiApp.feedTextPrompt = () => {
 }
 
 
+
 // writerAiApp.init
 writerAiApp.init = function () {
-  writerAiApp.AvatarGeneration()
+  writerAiApp.AvatarGeneration();
   writerAiApp.keyaGrab()
-    .then(writerAiApp.feedTextPrompt())
-    // .then(writerAiApp.displayResult());
+    .then(writerAiApp.feedTextPrompt());
+  writerAiApp.chatModal();
 }
 
 writerAiApp.init();
